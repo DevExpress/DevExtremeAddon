@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.devexpress.plugins.devextremeaddon"
+        version="1.0.0">
+
+		<name>DevExtremeAddon</name>
+
+  <description>
+    This plugin setups the CordovaView in the application.
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/devextremeaddon.js" name="DevExtremeAddon">
+    <clobbers target="window.devextremeaddon" />
+  </js-module>
+
+  <!-- wp8 -->
+  <platform name="wp8">
+    <config-file target="config.xml" parent="/*">
+      <feature name="DevExtremeAddon">
+        <param name="wp-package" value="DevExtremeAddon"/>
+      </feature>
+    </config-file>
+    <source-file src="src/wp8/DevExtremeAddon.cs" />
+  </platform>
+
+</plugin>
