@@ -1,6 +1,16 @@
 # PhoneGap DevExtremeAddon plugin
 
-License
+This plugin setups the CordovaView in the WindowPhone application.
+
+## Using the plugin ##
+The plugin creates the object `window/devextremeaddon` with the method `setup()`. 
+
+A full example could be:
+```
+   window.devextreme.setup();
+```
+
+## Licence ##
 
 [The MIT License (MIT)](http://www.opensource.org/licenses/mit-license.html)
 

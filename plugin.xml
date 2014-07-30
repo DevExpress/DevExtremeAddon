@@ -7,7 +7,7 @@
 		<name>DevExtremeAddon</name>
 
   <description>
-    This plugin setups the CordovaView in the application.
+    This plugin setups the CordovaView in the WindowPhone application.
   </description>
 
   <license>MIT</license>
