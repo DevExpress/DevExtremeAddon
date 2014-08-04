@@ -12,26 +12,40 @@ using System.Xml.Linq;
 
 namespace WPCordovaClassLib.Cordova.Commands {
     public class DevExtremeAddon : BaseCommand {
+
         public void setup(string options) {
             Deployment.Current.Dispatcher.BeginInvoke(() => {
                 PhoneApplicationFrame frame = Application.Current.RootVisual as PhoneApplicationFrame;
                 if(frame != null) {
                     PhoneApplicationPage page = frame.Content as PhoneApplicationPage;
-                    page.SupportedOrientations = LoadOrientationFromConfig();
                     if(page != null) {
-                        CordovaView cView = page.FindName("CordovaView") as CordovaView;
-                        cView.DisableBouncyScrolling = true;
-                        if(cView != null) {
-                            WebBrowser br = cView.Browser;
-                            br.ScriptNotify += (sender, e) => {
-                                if(e.Value == "DevExpress.ExitApp") {
-                                    Application.Current.Terminate();
-                                }
-                            };
+                        CordovaView cordovaView = page.FindName("CordovaView") as CordovaView;
+                        if(cordovaView != null) {
+                            WebBrowser browser = cordovaView.Browser;
+
+                            SetupOrientation(page);
+                            SetupBouncyScrolling(cordovaView);
+                            SetupExitAppDispatcher(browser);
                         }
                     }
                 }
             });
+        }
+
+        private static void SetupBouncyScrolling(CordovaView cordovaView) {
+            cordovaView.DisableBouncyScrolling = true;
+        }
+
+        private void SetupOrientation(PhoneApplicationPage page) {
+            page.SupportedOrientations = LoadOrientationFromConfig();
+        }
+
+        private static void SetupExitAppDispatcher(WebBrowser browser) {
+            browser.ScriptNotify += (sender, e) => {
+                if(e.Value == "DevExpress.ExitApp") {
+                    Application.Current.Terminate();
+                }
+            };
         }
 
         private SupportedPageOrientation LoadOrientationFromConfig() {

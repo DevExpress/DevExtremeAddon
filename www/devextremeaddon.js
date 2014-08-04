@@ -1,6 +1,6 @@
 ﻿
 var devextremeaddon = {
-    register: function () {
+    setup: function () {
         cordova.exec(null, null, "DevExtremeAddon", "setup", []);
     }
 }
