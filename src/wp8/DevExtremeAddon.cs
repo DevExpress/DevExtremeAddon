@@ -1,12 +1,9 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Resources;
 using System.Xml.Linq;
 
@@ -24,16 +21,16 @@ namespace WPCordovaClassLib.Cordova.Commands {
                             WebBrowser browser = cordovaView.Browser;
 
                             SetupOrientation(page);
-                            SetupBouncyScrolling(cordovaView);
                             SetupExitAppDispatcher(browser);
+                            HideSystemTray();
                         }
                     }
                 }
             });
         }
 
-        private static void SetupBouncyScrolling(CordovaView cordovaView) {
-            cordovaView.DisableBouncyScrolling = true;
+        private static void HideSystemTray() {
+            SystemTray.IsVisible = false;
         }
 
         private void SetupOrientation(PhoneApplicationPage page) {
@@ -55,7 +52,6 @@ namespace WPCordovaClassLib.Cordova.Commands {
             if(streamInfo != null) {
                 StreamReader sr = new StreamReader(streamInfo.Stream);
 
-                //This will Read Keys Collection for the xml file
                 XDocument document = XDocument.Parse(sr.ReadToEnd());
 
                 var preferences = from results in document.Descendants("preference")
