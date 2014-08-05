@@ -2,14 +2,13 @@
 
 This plugin setups the CordovaView in the WindowPhone application.
 
-## What the plug-in does? ##
 This plug-in adds the following features:
 
 1. Set up the orientation for the application because in 'config.xml' is not working for the WindowsPhone application.
  
 2. Set up the 'SystemTray.IsVisble' property.
  
-3. Add the ExitApp dispatcher for our JS framework (because we support cordova-3.3.0 where there was an issue with closing an application).
+3. Add the ExitApp dispatcher for our JS framework (for support cordova-3.3.0 where there was an issue with closing an application).
 
 ## Using the plugin ##
 The plugin creates the object `window/devextremeaddon` with the method `setup()`. 
