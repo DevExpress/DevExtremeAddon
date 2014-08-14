@@ -15,7 +15,7 @@ The plugin creates the object `window/devextremeaddon` with the method `setup()`
 
 A full example could be:
 ```
-   window.devextreme.setup();
+   window.devextremeaddon.setup();
 ```
 
 ## Licence ##
