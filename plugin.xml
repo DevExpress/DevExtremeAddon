@@ -4,7 +4,11 @@
         id="cordova-plugin-devextremeaddon"
         version="1.0.2">
 
-		<name>DevExtremeAddon</name>
+	<name>DevExtremeAddon</name>
+    <license>MIT</license>
+    <keywords>cordova,devextreme</keywords>
+    <repo>https://github.com/DevExpress/DevExtremeAddon</repo>
+    <issue>https://github.com/DevExpress/DevExtremeAddon/issues</issue>
 
   <description>
     This plugin setups the CordovaView in the WindowPhone application.
