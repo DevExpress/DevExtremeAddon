@@ -1,0 +1,21 @@
+{
+  "name": "cordova-plugin-devextremeaddon",
+  "version": "1.0.2",
+  "description": "dx addon test",
+  "cordova": {
+    "id": "cordova-plugin-devextremeaddon",
+    "platforms": [
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevExpress/DevExtremeAddon"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-wp8",
+  ],
+  "author": "Developer Express",
+  "license": "MIT"
+}
