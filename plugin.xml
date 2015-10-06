@@ -17,7 +17,7 @@
   <license>MIT</license>
 
   <engines>
-    <engine name="cordova" version=">=3.8.0"/>
+    <engine name="cordova" version=">=3.8.1"/>
   </engines>
 
   <js-module src="www/devextremeaddon.js" name="DevExtremeAddon">

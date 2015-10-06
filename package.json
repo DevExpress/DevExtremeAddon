@@ -16,6 +16,12 @@
     "cordova",
     "cordova-wp8"
   ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=3.8.1"
+    }
+  ],  
   "author": "Developer Express",
   "license": "MIT"
 }
