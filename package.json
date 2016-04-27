@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-devextremeaddon",
-  "version": "1.0.2",
-  "description": "dx addon test",
+  "version": "1.0.6",
+  "description": "This plugin setups the CordovaView in the WindowPhone application.",
   "cordova": {
     "id": "cordova-plugin-devextremeaddon",
     "platforms": [
